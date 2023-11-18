@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Calculator</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+
+    }
+
+    body {
+      background-color: rgb(195, 195, 195);
+      display: flex;
+      padding: 40px;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .container {
+    background-color: rgb(96, 96, 96);
+      
+      border: 2px solid  black;
+      border-radius: 10px;
+      box-shadow: -12px -12px 14px gray, 5px 5px 14px rgb(0,0,0);
+
+    }
+    .container form input{
+      border: 2px solid rgba(45, 56, 65);
+      outline: 0;
+      padding: 10px;
+      width: 60px;
+      height: 60px;
+      border-radius: 10px;
+    box-shadow: -8px -8px 10px gray, 3px 3px 12px rgb(0,0,0);
+  background: transparent;
+font-size: 20px;
+color: rgb(0, 0, 0);
+cursor: pointer;
+margin: 10px ;}
+form .display{
+  display: flex;
+  justify-content: flex-end;
+  margin: 20px 0;
+
+}
+form .display input{
+  color: rgb(0, 0, 0);
+  text-align: right;
+  flex: 1;
+  font-size: 40px;
+box-shadow: none;
+}.container .equal{
+width: 145px;
+color: rgb(223, 255, 244);
+
+}
+form input.operator{
+    color: rgb(223, 255, 244);
+}
+  
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <form>
+      <div class="display">
+        <input type="text" name="display">
+      </div>
+      <div class="buttons">
+        <input type="button" value="AC" onclick="display.value =''" class="operator">
+        <input type="button" value="DE" onclick="display.value = display.value.toString().slice(0,-1)"  class="operator">
+        <input type="button" value="." onclick="display.value +='.'" class="operator">
+        <input type="button" value="/" onclick="display.value +='/'" class="operator">
+      </div>
+      <div class="buttons">
+        <input type="button" value="7" onclick="display.value +='7'">
+        <input type="button" value="8" onclick="display.value +='8'">
+        <input type="button" value="9" onclick="display.value +='9'">
+        <input type="button" value="*" onclick="display.value +='*'" class="operator">
+      </div>
+      <div class="buttons">
+        <input type="button" value="4" onclick="display.value +='4'">
+        <input type="button" value="5" onclick="display.value +='5'">
+        <input type="button" value="6" onclick="display.value +='6'">
+        <input type="button" value="-" onclick="display.value +='-'" class="operator">
+      </div>
+      <div class="buttons">
+        <input type="button" value="1" onclick="display.value +='1'" >
+        <input type="button" value="2" onclick="display.value +='2'" >
+        <input type="button" value="3" onclick="display.value +='3'" >
+        <input type="button" value="+" onclick="display.value +='+'" class="operator">
+      </div>
+      <div class="buttons">
+        <input type="button" value="00" onclick="display.value +='00'">
+        <input type="button" value="0" onclick="display.value +='0'">
+        
+        <input type="button" value="=" class="equal" onclick="display.value = eval(display.value)" >
+      </div>
+    </form>
+  </div>
+</body>
+
+</html>
